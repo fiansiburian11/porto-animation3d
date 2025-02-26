@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
 import BlurText from "./components/BlurText/BlurText";
 import CircularText from "./components/CircularText/CircularText";
@@ -6,7 +7,6 @@ import DecryptedText from "./components/DecryptedText/DecryptedText";
 import GradientText from "./components/GradientText/GradientText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import RotatingText from "./components/RotatingText/RotatingText";
-import ScrollVelocity from "./components/ScrollVelocity/ScrollVelocity";
 import SplashCursor from "./components/SplashCursor/SplashCursor";
 import Squares from "./components/Squares/Squares";
 import TrueFocus from "./components/TrueFocus/TrueFocus";
@@ -15,6 +15,12 @@ export default function Home() {
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
   };
+  const sosmed = [
+    {
+      id: 1,
+      instagram: "https://www.instagram.com/fiansiburian_/",
+    },
+  ];
   return (
     <div className="min-h-screen overflow-hidden bg-[#19222D]">
       <SplashCursor />
@@ -78,11 +84,15 @@ export default function Home() {
                     />
                   </div>
                 </AnimatedContent>
-                <div>
-                  <GradientText colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]} animationSpeed={3} showBorder={false} className="py-1 px-3 rounded-full text-[8px]">
-                    Consultasion Now!
-                  </GradientText>
-                </div>
+                {sosmed.map((name, id) => (
+                  <div key={id}>
+                    <Link href={name.instagram}>
+                      <GradientText colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]} animationSpeed={3} showBorder={false} className="py-1 px-3 rounded-full text-[8px]">
+                        Consultasion Now!
+                      </GradientText>
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="col-span-3  relative">
