@@ -91,7 +91,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ScrollVelocity texts={["Konsisten, Fokus, Semangat, Tekun, Disiplin", "Pantang, Berani, Tangguh, Gigih, Yakin"]} className="custom-scroll-text text-sm w-full mb-4 pb-2 bg-transparent" />
       </div>
     </div>
   );
